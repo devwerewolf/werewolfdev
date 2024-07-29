@@ -13,11 +13,6 @@
 
 
 <style lang="scss">
-  a, a:visited {
-    color: inherit;
-    text-decoration: none;
-  }
-
   .current {
     &::before {
       content: "[";
