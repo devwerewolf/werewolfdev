@@ -24,7 +24,7 @@
   </nav>
 
   <a href={$page.route.id} on:click={colorMode.toggle}>
-    werewolf dev
+    werewolf {$colorMode}
   </a>
 </header>
 
@@ -36,7 +36,7 @@
     background-color: var(--body-background-color);
     display: flex;
     font-size: xx-large;
-    padding: 1rem 1rem 0.75rem 1rem;
+    padding: 1rem;
     position: sticky;
     
     &.landscape {
@@ -47,7 +47,11 @@
     
     &.portrait {
       flex-direction: column-reverse;
-      top: -3rem;
+      top: -3.5rem;
+
+      nav {
+        padding-top: 0.25rem;
+      }
     }
   }
 </style>

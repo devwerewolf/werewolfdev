@@ -13,13 +13,13 @@ body {
   background-color: var(--body-background-color);
   color: var(--body-color);
 
-  &.dark {
-    --body-background-color: #021526;
-    --body-color: #E2E2B6;
-  }
-
-  &.light {
+  &.day {
     --body-background-color: #3176F1;
     --body-color: white;
+  }
+
+  &.night {
+    --body-background-color: #021526;
+    --body-color: #E2E2B6;
   }
 }
