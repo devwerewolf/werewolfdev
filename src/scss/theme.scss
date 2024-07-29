@@ -1,0 +1,17 @@
+body {
+  // TODO: Pick better defaults?
+  background-color: #03346E;
+  color: #03346E;
+  transition: all 500ms ease;
+  transition-delay: 125ms;
+
+  &.dark {
+    background-color: #021526;
+    color: #E2E2B6;
+  }
+
+  &.light {
+    background-color: #3176F1;
+    color: white;
+  }
+}
