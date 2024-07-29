@@ -47,7 +47,7 @@
     
     &.portrait {
       flex-direction: column-reverse;
-      top: -2.85rem;
+      top: -3rem;
     }
   }
 </style>
