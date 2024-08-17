@@ -1,8 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { page } from "$app/stores";
+  import { fade } from "svelte/transition";
   import NavLink from "$lib/components/NavLink.svelte";
-  import OrientationProvider, { orientation } from "$lib/providers/OrientationProvider.svelte";
   import { colorMode } from "$lib/stores/colorMode";
   import "../scss/reset.scss";
   import "../scss/theme.scss";
@@ -12,46 +11,30 @@
   });
 </script>
 
+<svelte:body in:fade />
 
-<OrientationProvider />
-
-
-<header class={$orientation}>
+<header>
   <nav>
     <NavLink href="/">home</NavLink>
     <NavLink href="/about">about</NavLink>
     <NavLink href="/blog">blog</NavLink>
   </nav>
 
-  <a href={$page.route.id} on:click={colorMode.toggle}>
+  <button id="color-mode-toggle" on:click={colorMode.toggle}>
     werewolf {$colorMode}
-  </a>
+  </button>
 </header>
 
 <slot></slot>
 
 
 <style lang="scss">
-  header {
-    background-color: var(--body-background-color);
-    display: flex;
-    font-size: xx-large;
-    padding: 1rem;
-    position: sticky;
-    
-    &.landscape {
-      flex-direction: row;
-      justify-content: space-between;
-      top: 0px;
-    }
-    
-    &.portrait {
-      flex-direction: column-reverse;
-      top: -3.5rem;
-
-      nav {
-        padding-top: 0.25rem;
-      }
-    }
+  #color-mode-toggle {
+    background: none;
+    border: none;
+	  color: inherit;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
   }
 </style>
